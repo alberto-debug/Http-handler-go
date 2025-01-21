@@ -7,3 +7,7 @@ test:
 
 run: build
 	@./bin/HttpHandler
+
+kill:
+	@fuser -k 8080/tcp || true
+
