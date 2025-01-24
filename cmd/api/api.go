@@ -2,6 +2,7 @@ package api
 
 import (
 	"database/sql"
+	"log"
 	"net/http"
 
 	"github.com/gorilla/mux"
@@ -27,6 +28,8 @@ func (s *APIServer) Run() error {
 
 	userHandler := user.NewHandler()
 	userHandler.RegisterRoutes(subrouter)
+
+	log.Println("Running at : ", s.addr)
 
 	return http.ListenAndServe(s.addr, router)
 }
