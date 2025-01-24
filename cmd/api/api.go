@@ -24,5 +24,5 @@ func (s *APIServer) Run() error {
 	router := mux.NewRouter()
 	subRouter := router.Path("/api/v1").Subrouter()
 
-	return http.ResponseWriter(s.addr, router)
+	return http.ListenAndServe(s.addr, router)
 }
