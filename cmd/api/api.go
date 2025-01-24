@@ -1,3 +1,9 @@
 package api
 
-type APIServer struct{}
+import "database/sql"
+
+type APIServer struct {
+	addr string
+
+	db *sql.DB
+}
