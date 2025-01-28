@@ -28,6 +28,7 @@ func (s *APIServer) Run() error {
 	subRouter := router.Path("/api/v1").Subrouter()
 
 	userHandler := user.NewHandler()
+
 	userHandler.RegisterRoutes(subRouter)
 
 	log.Println("Running at : ", s.addr)
